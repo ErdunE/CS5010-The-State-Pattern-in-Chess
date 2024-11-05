@@ -59,3 +59,8 @@ CS5010-The-State-Pattern-in-Chess
 │   ├── CheckState.java     (Kai)
 │   └── CheckmateState.java (Erdun)
 ```
+### Reflection 
+What is each state used for, if there are any states we wanted to 
+include but did not talk about that as well.
+* State: the abstract state class
+* GameStartState: 

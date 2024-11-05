@@ -16,6 +16,15 @@ public class CheckmateState extends State {
         super(chessGame);
     }
 
+
+    @Override
+    public String work() {
+        System.out.println("We are in the checkmate state.");
+        // print "Game over" maybe say who won and exit the program in this method itself, before return statement.
+        System.exit(0);
+        return "";
+    }
+
     // Placeholder for actions that will be taken in the checkmate state.
 
     // Placeholder method indicating the game is over in the checkmate state.

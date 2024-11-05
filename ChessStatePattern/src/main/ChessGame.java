@@ -21,7 +21,7 @@ public class ChessGame {
 	 * and creates a new {@code Board}.
 	 */
 	public ChessGame() {
-		state = new NormalPlayState(this);
+		state = new GameStart(this);
 		board = new Board();
 	}
 
@@ -56,17 +56,42 @@ public class ChessGame {
 		// Placeholder: Start of game loop
 		System.out.println("Starting game loop...");
 
+		//initializing state object
+		NormalPlayState play = new NormalPlayState(this);
+		AttackingState attack = new AttackingState(this);
+		CheckState check = new CheckState(this);
+		CheckmateState mate = new CheckmateState(this);
+
 		// Placeholder: Simulate game loop condition
 		// Expected behavior is replace this with `while (!state.isGameOver())` in final version
 		boolean gameInProgress = true;  // Placeholder variable to simulate loop condition
 
 		// Placeholder: Simulate a single iteration of the game loop
-		if (gameInProgress) {
-			// Placeholder for state actions in the loop
-			System.out.println("Taking turn in the current state...");
+		while (gameInProgress) {
+			/*
+			 assign this.state to the next state depending on what string this.state.work() returns.
+			 */
+			String nextState = this.state.work();
+
+			switch (nextState) {
+				case ("Attack"):
+					this.state = attack;
+					break;
+				case ("Check"):
+					this.state = check;
+					break;
+				case("CheckMate"):
+					this.state = mate;
+					break;
+				case("NormalPlay"):
+					this.state = play;
+					break;
+			}
+
 			// Uncomment this when actual state logic is ready
 			// Placeholder: End loop after one iteration
-			gameInProgress = false;
+//			gameInProgress = false;
+			// program will be exited using System.exit(0) in checkmate state.
 		}
 
 		// Placeholder: Game over message
