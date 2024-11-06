@@ -1,7 +1,13 @@
 package states;
 import main.*;
+/*
+    Author: Kai
+    Version:6.Oct.2024
+ */
 public class CheckState extends  State{
-    public CheckState(ChessGame game){
+     private ChessGame game;
+     private String currentPlayer;
+     public CheckState(ChessGame game){
         super(game);
     }
     @Override
@@ -11,7 +17,7 @@ public class CheckState extends  State{
 
     @Override
     public State normalplay() {
-        System.out.println("Transitioning to normalplay State");
+        System.out.println("Not check now.");
         return new normalplay;
         // in check state, normalplay means switch to normalplay state
     }
@@ -33,6 +39,6 @@ public class CheckState extends  State{
 
     @Override
     public State PlayerTurnSwitch() {
-        return null;
+        throw new UnsupportedOperationException("Please make your move. ");
     }
 }
