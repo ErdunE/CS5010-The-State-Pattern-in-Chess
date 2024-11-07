@@ -6,7 +6,7 @@ import main.*;
  *     to the NormalPlayState.
  *
  *     @Author: Kai
- *     @Version: 1.0
+ *     @Version: 1.0 test
  *     @since 2024-11-6
  */
 public class CheckState extends State{
